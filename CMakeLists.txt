@@ -26,9 +26,16 @@ file(GLOB_RECURSE SRC
         src/*.cpp
 )
 
-add_library(Vertelien2Core ${INCLUDE} ${SRC})
+add_library(Vertelien2Core ${INCLUDE} ${SRC}
+        test/serialization/job.cpp)
 set_target_properties(Vertelien2Core PROPERTIES LINKER_LANGUAGE CXX)
+
+enable_testing()
 
 add_executable(Vertelien2Core_UUIDTest test/uuid.cpp)
 target_include_directories(Vertelien2Core_UUIDTest PUBLIC "include")
-set_target_properties(Vertelien2Core_UUIDTest PROPERTIES LINKER_LANGUAGE CXX)
+add_test(NAME Vertelien2Core_UUIDTest COMMAND Vertelien2Core_UUIDTest)
+
+add_executable(Vertelien2Core_Serialization_JobTest test/serialization/job.cpp)
+target_include_directories(Vertelien2Core_Serialization_JobTest PUBLIC "include")
+add_test(NAME Vertelien2Core_Serialization_JobTest COMMAND Vertelien2Core_Serialization_JobTest)
