@@ -8,6 +8,7 @@ set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY archive/ )
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(MYLIB "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
@@ -17,25 +18,29 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 endif ()
 
 file(GLOB_RECURSE INCLUDE
-        include/*.h
-        include/*.hpp
+        include/**.h
+        include/**.hpp
 )
 
 file(GLOB_RECURSE SRC
-        src/*.c
-        src/*.cpp
+        src/**.c
+        src/**.cpp
 )
 
-add_library(Vertelien2Core ${INCLUDE} ${SRC}
-        test/serialization/job.cpp)
+add_library(Vertelien2Core ${SRC})
+target_include_directories(Vertelien2Core PUBLIC "include")
 set_target_properties(Vertelien2Core PROPERTIES LINKER_LANGUAGE CXX)
 
 enable_testing()
 
 add_executable(Vertelien2Core_UUIDTest test/uuid.cpp)
 target_include_directories(Vertelien2Core_UUIDTest PUBLIC "include")
+target_link_directories(Vertelien2Core_UUIDTest PUBLIC "${MYLIB}")
+target_link_libraries(Vertelien2Core_UUIDTest "libVertelien2Core.a")
 add_test(NAME Vertelien2Core_UUIDTest COMMAND Vertelien2Core_UUIDTest)
 
 add_executable(Vertelien2Core_Serialization_JobTest test/serialization/job.cpp)
 target_include_directories(Vertelien2Core_Serialization_JobTest PUBLIC "include")
+target_link_directories(Vertelien2Core_Serialization_JobTest PUBLIC "${MYLIB}")
+target_link_libraries(Vertelien2Core_Serialization_JobTest "libVertelien2Core.a")
 add_test(NAME Vertelien2Core_Serialization_JobTest COMMAND Vertelien2Core_Serialization_JobTest)
