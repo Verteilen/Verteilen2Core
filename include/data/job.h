@@ -1,7 +1,4 @@
 #pragma once
-#include <iostream>
-#include <cstdint>
-#include <cstring>
 #include <vector>
 #include <string>
 
@@ -40,7 +37,7 @@ namespace vertelien2 {
             Condition condition;
         };
 
-        Version version{0, 0, 1};
+        Version version;
         /// The uuid for the job <br />
         /// During the process, this will replace by the runtime uuid <br />
         /// In order to know the source running process target
@@ -59,6 +56,11 @@ namespace vertelien2 {
 
     namespace serialization {
         struct JobSerialization {
+            typedef void (*SerializationCaller)(const char* data);
+            typedef void (*DeserializationCaller)(const Job& job);
+            static void RegisterCallerHandle(SerializationCaller caller);
+            static void RegisterCallerHandle(DeserializationCaller caller);
+
             static uint32_t ToBinary(const Job& job, char*& ptr);
             static Job* ToData(uint32_t size, const char* ptr);
             static uint32_t GetSize(const Job& job);

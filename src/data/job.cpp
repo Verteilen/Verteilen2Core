@@ -1,8 +1,9 @@
 #include <data/job.h>
+#include <data/config.h>
 
 namespace vertelien2 {
     Job::Job(){
-        version = {0, 0, 1};
+        version = JOB_VERSION;
         GetUUID(uuid);
         category = Category::EXECUTE;
         subCategory.execute = Execute::JAVASCRIPT;

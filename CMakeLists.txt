@@ -44,3 +44,15 @@ target_include_directories(Vertelien2Core_Serialization_JobTest PUBLIC "include"
 target_link_directories(Vertelien2Core_Serialization_JobTest PUBLIC "${MYLIB}")
 target_link_libraries(Vertelien2Core_Serialization_JobTest "libVertelien2Core.a")
 add_test(NAME Vertelien2Core_Serialization_JobTest COMMAND Vertelien2Core_Serialization_JobTest)
+
+add_executable(Vertelien2Core_Serialization_TaskTest test/serialization/task.cpp)
+target_include_directories(Vertelien2Core_Serialization_TaskTest PUBLIC "include")
+target_link_directories(Vertelien2Core_Serialization_TaskTest PUBLIC "${MYLIB}")
+target_link_libraries(Vertelien2Core_Serialization_TaskTest "libVertelien2Core.a")
+add_test(NAME Vertelien2Core_Serialization_TaskTest COMMAND Vertelien2Core_Serialization_TaskTest)
+
+add_executable(Vertelien2Core_Serialization_ProjectTest test/serialization/project.cpp)
+target_include_directories(Vertelien2Core_Serialization_ProjectTest PUBLIC "include")
+target_link_directories(Vertelien2Core_Serialization_ProjectTest PUBLIC "${MYLIB}")
+target_link_libraries(Vertelien2Core_Serialization_ProjectTest "libVertelien2Core.a")
+add_test(NAME Vertelien2Core_Serialization_ProjectTest COMMAND Vertelien2Core_Serialization_ProjectTest)
