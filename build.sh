@@ -1,3 +1,3 @@
 #/bin/bash
 echo Start Building...
-cmake --build /media/zhuelly/Project/Developer/Verteilen2/Vertelien2Core/cmake-build-debug --target Vertelien2Core -j 14
+cmake --build /media/zhuelly/Project/Developer/Verteilen2/Vertelien2Core/cmake-build-debug --target all -- -j 14

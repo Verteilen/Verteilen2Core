@@ -20,6 +20,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
+      <config projectName="Vertelien2Core" targetName="Vertelien2Core_EnvTest" />
       <config projectName="Vertelien2Core" targetName="Vertelien2Core_UUIDTest" />
       <config projectName="Vertelien2Core" targetName="Vertelien2Core_Serialization_JobTest" />
       <config projectName="Vertelien2Core" targetName="Vertelien2Core_Serialization_ProjectWholeTest" />
@@ -35,11 +36,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6eac506-808c-449e-9305-1d13d4dbad03" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/include/utility/environment.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/environment.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/serialization/project_whole.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +169,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Vertelien2Core_EnvTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vertelien2Core" TARGET_NAME="Vertelien2Core_EnvTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vertelien2Core" RUN_TARGET_NAME="Vertelien2Core_EnvTest">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Vertelien2Core_Serialization_JobTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vertelien2Core" TARGET_NAME="Vertelien2Core_Serialization_JobTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vertelien2Core" RUN_TARGET_NAME="Vertelien2Core_Serialization_JobTest">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -196,11 +199,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -208,12 +206,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.Vertelien2Core" />
+      <item itemvalue="CMake Application.Vertelien2Core_EnvTest" />
       <item itemvalue="CMake Application.Vertelien2Core_Serialization_JobTest" />
       <item itemvalue="CMake Application.Vertelien2Core_Serialization_ProjectTest" />
       <item itemvalue="CMake Application.Vertelien2Core_Serialization_ProjectWholeTest" />
       <item itemvalue="CMake Application.Vertelien2Core_Serialization_TaskTest" />
       <item itemvalue="CMake Application.Vertelien2Core_UUIDTest" />
+      <item itemvalue="CMake Application.Vertelien2Core" />
       <item itemvalue="CTest Application.All CTest" />
     </list>
   </component>
@@ -227,7 +226,9 @@
       <workItem from="1751586705977" duration="3612000" />
       <workItem from="1751638550410" duration="12434000" />
       <workItem from="1751721735014" duration="2460000" />
-      <workItem from="1751811605152" duration="20799000" />
+      <workItem from="1751811605152" duration="20835000" />
+      <workItem from="1751954554410" duration="2000" />
+      <workItem from="1751954600797" duration="18000" />
     </task>
     <servers />
   </component>
