@@ -27,7 +27,8 @@ file(GLOB_RECURSE SRC
         src/**.cpp
 )
 
-add_library(Vertelien2Core ${SRC})
+add_library(Vertelien2Core ${SRC}
+        include/utility/environment.h)
 target_include_directories(Vertelien2Core PUBLIC "include")
 set_target_properties(Vertelien2Core PROPERTIES LINKER_LANGUAGE CXX)
 
@@ -38,6 +39,12 @@ target_include_directories(Vertelien2Core_UUIDTest PUBLIC "include")
 target_link_directories(Vertelien2Core_UUIDTest PUBLIC "${MYLIB}")
 target_link_libraries(Vertelien2Core_UUIDTest "libVertelien2Core.a")
 add_test(NAME Vertelien2Core_UUIDTest COMMAND Vertelien2Core_UUIDTest)
+
+add_executable(Vertelien2Core_EnvTest test/environment.cpp)
+target_include_directories(Vertelien2Core_EnvTest PUBLIC "include")
+target_link_directories(Vertelien2Core_EnvTest PUBLIC "${MYLIB}")
+target_link_libraries(Vertelien2Core_EnvTest "libVertelien2Core.a")
+add_test(NAME Vertelien2Core_EnvTest COMMAND Vertelien2Core_EnvTest)
 
 add_executable(Vertelien2Core_Serialization_JobTest test/serialization/job.cpp)
 target_include_directories(Vertelien2Core_Serialization_JobTest PUBLIC "include")
@@ -56,3 +63,9 @@ target_include_directories(Vertelien2Core_Serialization_ProjectTest PUBLIC "incl
 target_link_directories(Vertelien2Core_Serialization_ProjectTest PUBLIC "${MYLIB}")
 target_link_libraries(Vertelien2Core_Serialization_ProjectTest "libVertelien2Core.a")
 add_test(NAME Vertelien2Core_Serialization_ProjectTest COMMAND Vertelien2Core_Serialization_ProjectTest)
+
+add_executable(Vertelien2Core_Serialization_ProjectWholeTest test/serialization/project_whole.cpp)
+target_include_directories(Vertelien2Core_Serialization_ProjectWholeTest PUBLIC "include")
+target_link_directories(Vertelien2Core_Serialization_ProjectWholeTest PUBLIC "${MYLIB}")
+target_link_libraries(Vertelien2Core_Serialization_ProjectWholeTest "libVertelien2Core.a")
+add_test(NAME Vertelien2Core_Serialization_ProjectWholeTest COMMAND Vertelien2Core_Serialization_ProjectWholeTest)

@@ -22,7 +22,10 @@
     <generated>
       <config projectName="Vertelien2Core" targetName="Vertelien2Core_UUIDTest" />
       <config projectName="Vertelien2Core" targetName="Vertelien2Core_Serialization_JobTest" />
+      <config projectName="Vertelien2Core" targetName="Vertelien2Core_Serialization_ProjectWholeTest" />
+      <config projectName="Vertelien2Core" targetName="Vertelien2Core_Serialization_ProjectTest" />
       <config projectName="Vertelien2Core" targetName="Vertelien2Core" />
+      <config projectName="Vertelien2Core" targetName="Vertelien2Core_Serialization_TaskTest" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -32,21 +35,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6eac506-808c-449e-9305-1d13d4dbad03" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/include/data/config.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/data/dataset.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/dataset.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/project.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/task.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/serialization/project.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/utility/environment.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/environment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/serialization/project_whole.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/data/job.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/data/job.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/data/project.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/data/project.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/data/task.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/data/task.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TEST.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/job.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/job.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/serialization/task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/serialization/task.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +176,21 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Vertelien2Core_Serialization_ProjectTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vertelien2Core" TARGET_NAME="Vertelien2Core_Serialization_ProjectTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vertelien2Core" RUN_TARGET_NAME="Vertelien2Core_Serialization_ProjectTest">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Vertelien2Core_Serialization_ProjectWholeTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vertelien2Core" TARGET_NAME="Vertelien2Core_Serialization_ProjectWholeTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vertelien2Core" RUN_TARGET_NAME="Vertelien2Core_Serialization_ProjectWholeTest">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Vertelien2Core_Serialization_TaskTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vertelien2Core" TARGET_NAME="Vertelien2Core_Serialization_TaskTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vertelien2Core" RUN_TARGET_NAME="Vertelien2Core_Serialization_TaskTest">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Vertelien2Core_UUIDTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vertelien2Core" TARGET_NAME="Vertelien2Core_UUIDTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vertelien2Core" RUN_TARGET_NAME="Vertelien2Core_UUIDTest">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -202,6 +210,9 @@
     <list>
       <item itemvalue="CMake Application.Vertelien2Core" />
       <item itemvalue="CMake Application.Vertelien2Core_Serialization_JobTest" />
+      <item itemvalue="CMake Application.Vertelien2Core_Serialization_ProjectTest" />
+      <item itemvalue="CMake Application.Vertelien2Core_Serialization_ProjectWholeTest" />
+      <item itemvalue="CMake Application.Vertelien2Core_Serialization_TaskTest" />
       <item itemvalue="CMake Application.Vertelien2Core_UUIDTest" />
       <item itemvalue="CTest Application.All CTest" />
     </list>
@@ -216,7 +227,7 @@
       <workItem from="1751586705977" duration="3612000" />
       <workItem from="1751638550410" duration="12434000" />
       <workItem from="1751721735014" duration="2460000" />
-      <workItem from="1751811605152" duration="12144000" />
+      <workItem from="1751811605152" duration="20799000" />
     </task>
     <servers />
   </component>
