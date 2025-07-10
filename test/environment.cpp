@@ -1,4 +1,4 @@
-#include <assert.h>
+#include <cassert>
 #include <iostream>
 #include <utility/environment.h>
 

@@ -35,55 +35,55 @@ namespace vertelien2 {
         uint32_t TaskSerialization::ToBinary(const Task& task, char*& ptr) {
             uint32_t size = GetSize(task);
 
-            uint32_t gap = 0;
+            uint32_t offset = 0;
             ptr = (char*)malloc(size);
-            memcpy(&ptr[gap], &task.version, sizeof(Version));
-            gap += sizeof(task.version);
-            memcpy(&ptr[gap], &task.uuid, sizeof(task.uuid));
-            gap += sizeof(task.uuid);
-            memcpy(&ptr[gap], &task.title, sizeof(task.title));
-            gap += sizeof(task.title);
-            memcpy(&ptr[gap], &task.description, sizeof(task.description));
-            gap += sizeof(task.description);
-            memcpy(&ptr[gap], &task.type, sizeof(task.type));
-            gap += sizeof(task.type);
-            memcpy(&ptr[gap], &task.cronjobKey, sizeof(task.cronjobKey));
-            gap += sizeof(task.cronjobKey);
-            memcpy(&ptr[gap], &task.multiKey, sizeof(task.multiKey));
-            gap += sizeof(task.multiKey);
+            memcpy(&ptr[offset], &task.version, sizeof(Version));
+            offset += sizeof(task.version);
+            memcpy(&ptr[offset], &task.uuid, sizeof(task.uuid));
+            offset += sizeof(task.uuid);
+            memcpy(&ptr[offset], &task.title, sizeof(task.title));
+            offset += sizeof(task.title);
+            memcpy(&ptr[offset], &task.description, sizeof(task.description));
+            offset += sizeof(task.description);
+            memcpy(&ptr[offset], &task.type, sizeof(task.type));
+            offset += sizeof(task.type);
+            memcpy(&ptr[offset], &task.cronjobKey, sizeof(task.cronjobKey));
+            offset += sizeof(task.cronjobKey);
+            memcpy(&ptr[offset], &task.multiKey, sizeof(task.multiKey));
+            offset += sizeof(task.multiKey);
             uint32_t jobsSize = task.jobs.size();
-            memcpy(&ptr[gap], &jobsSize, sizeof(uint32_t));
-            gap += sizeof(uint32_t);
+            memcpy(&ptr[offset], &jobsSize, sizeof(uint32_t));
+            offset += sizeof(uint32_t);
             for (int i = 0; i < jobsSize; i++) {
-                memcpy(&ptr[gap], &task.jobs.at(i).get()->uuid, sizeof(task.uuid));
-                gap += sizeof(task.uuid);
+                memcpy(&ptr[offset], &task.jobs.at(i).get()->uuid, sizeof(task.uuid));
+                offset += sizeof(task.uuid);
             }
             return size;
         }
         Task* TaskSerialization::ToData(uint32_t size, const char* ptr) {
             Task* task = new Task();
-            uint32_t gap = 0;
-            memcpy(&task->version, &ptr[gap], sizeof(Version));
-            gap += sizeof(Version);
-            memcpy(&task->uuid, &ptr[gap], sizeof(task->uuid));
-            gap += sizeof(task->uuid);
-            memcpy(&task->title, &ptr[gap], sizeof(task->title));
-            gap += sizeof(task->title);
-            memcpy(&task->description, &ptr[gap], sizeof(task->description));
-            gap += sizeof(task->description);
-            memcpy(&task->type, &ptr[gap], sizeof(task->type));
-            gap += sizeof(task->type);
-            memcpy(&task->cronjobKey, &ptr[gap], sizeof(task->cronjobKey));
-            gap += sizeof(task->cronjobKey);
-            memcpy(&task->multiKey, &ptr[gap], sizeof(task->multiKey));
-            gap += sizeof(task->multiKey);
+            uint32_t offset = 0;
+            memcpy(&task->version, &ptr[offset], sizeof(Version));
+            offset += sizeof(Version);
+            memcpy(&task->uuid, &ptr[offset], sizeof(task->uuid));
+            offset += sizeof(task->uuid);
+            memcpy(&task->title, &ptr[offset], sizeof(task->title));
+            offset += sizeof(task->title);
+            memcpy(&task->description, &ptr[offset], sizeof(task->description));
+            offset += sizeof(task->description);
+            memcpy(&task->type, &ptr[offset], sizeof(task->type));
+            offset += sizeof(task->type);
+            memcpy(&task->cronjobKey, &ptr[offset], sizeof(task->cronjobKey));
+            offset += sizeof(task->cronjobKey);
+            memcpy(&task->multiKey, &ptr[offset], sizeof(task->multiKey));
+            offset += sizeof(task->multiKey);
             uint32_t jobsSize = 0;
-            memcpy(&jobsSize, &ptr[gap], sizeof(jobsSize));
-            gap += sizeof(jobsSize);
+            memcpy(&jobsSize, &ptr[offset], sizeof(jobsSize));
+            offset += sizeof(jobsSize);
             task->buffer_job_uuid = std::vector<char[36]>(jobsSize);
             for (int i = 0; i < jobsSize; i++) {
-                memcpy(&task->buffer_job_uuid[i], &ptr[gap], sizeof(task->uuid));
-                gap += sizeof(task->uuid);
+                memcpy(&task->buffer_job_uuid[i], &ptr[offset], sizeof(task->uuid));
+                offset += sizeof(task->uuid);
             }
             return task;
         }
@@ -103,11 +103,11 @@ namespace vertelien2 {
             return size;
         }
 
-        uint32_t TaskSerialization::ToBinary_Whole(const Task &task, char *&ptr) {
+        uint32_t TaskSerialization::ToBinary_Whole(const Task &task, char *&ptr, uint32_t& offset) {
             return 0;
         }
-        Task* TaskSerialization::ToData_Whole(uint32_t size, const char *ptr) {
-
+        Task* TaskSerialization::ToData_Whole(uint32_t size, const char *ptr, uint32_t& offset) {
+            return nullptr;
         }
         uint32_t TaskSerialization::GetSize_Whole(const Task &task) {
             uint32_t size = 0;

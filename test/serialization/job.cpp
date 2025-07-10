@@ -1,4 +1,4 @@
-#include <assert.h>
+#include <cassert>
 #include <iostream>
 #include <data/job.h>
 #include <utility/uuid.h>
@@ -15,7 +15,7 @@ int main() {
     std::cout << "\t sub-cate: " << job.subCategory.index << std::endl;
     std::cout << "\t script: " << job.script << std::endl;
 
-    char* result;
+    char* result{};
     std::cout << "Convert binary" << std::endl;
     uint32_t size = vertelien2::serialization::JobSerialization::ToBinary(job, result);
     std::cout << "Convert binary finish: " << size << std::endl;

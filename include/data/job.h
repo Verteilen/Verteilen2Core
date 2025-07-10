@@ -64,6 +64,9 @@ namespace vertelien2 {
             static uint32_t ToBinary(const Job& job, char*& ptr);
             static Job* ToData(uint32_t size, const char* ptr);
             static uint32_t GetSize(const Job& job);
+
+            static uint32_t ToBinary_Whole(const Job& job, char*& ptr, uint32_t& offset);
+            static Job* ToData_Whole(uint32_t size, const char* ptr, uint32_t& offset);
         };
     }
 }

@@ -34,44 +34,44 @@ namespace  vertelien2 {
         uint32_t ProjectSerialization::ToBinary(const Project &project, char *&ptr) {
             uint32_t size = GetSize(project);
 
-            uint32_t gap = 0;
+            uint32_t offset = 0;
             ptr = (char*)malloc(size);
-            memcpy(&ptr[gap], &project.version, sizeof(Version));
-            gap += sizeof(project.version);
-            memcpy(&ptr[gap], &project.uuid, sizeof(project.uuid));
-            gap += sizeof(project.uuid);
-            memcpy(&ptr[gap], &project.title, sizeof(project.title));
-            gap += sizeof(project.title);
-            memcpy(&ptr[gap], &project.description, sizeof(project.description));
-            gap += sizeof(project.description);
+            memcpy(&ptr[offset], &project.version, sizeof(Version));
+            offset += sizeof(project.version);
+            memcpy(&ptr[offset], &project.uuid, sizeof(project.uuid));
+            offset += sizeof(project.uuid);
+            memcpy(&ptr[offset], &project.title, sizeof(project.title));
+            offset += sizeof(project.title);
+            memcpy(&ptr[offset], &project.description, sizeof(project.description));
+            offset += sizeof(project.description);
             uint32_t jobsSize = project.tasks.size();
-            memcpy(&ptr[gap], &jobsSize, sizeof(uint32_t));
-            gap += sizeof(uint32_t);
+            memcpy(&ptr[offset], &jobsSize, sizeof(uint32_t));
+            offset += sizeof(uint32_t);
             for (int i = 0; i < jobsSize; i++) {
-                memcpy(&ptr[gap], &project.tasks.at(i).get()->uuid, sizeof(project.uuid));
-                gap += sizeof(project.uuid);
+                memcpy(&ptr[offset], &project.tasks.at(i).get()->uuid, sizeof(project.uuid));
+                offset += sizeof(project.uuid);
             }
             if (s_caller != nullptr) s_caller(ptr);
             return size;
         }
         Project * ProjectSerialization::ToData(uint32_t size, const char *ptr) {
             Project* project = new Project();
-            uint32_t gap = 0;
-            memcpy(&project->version, &ptr[gap], sizeof(Version));
-            gap += sizeof(Version);
-            memcpy(&project->uuid, &ptr[gap], sizeof(project->uuid));
-            gap += sizeof(project->uuid);
-            memcpy(&project->title, &ptr[gap], sizeof(project->title));
-            gap += sizeof(project->title);
-            memcpy(&project->description, &ptr[gap], sizeof(project->description));
-            gap += sizeof(project->description);
+            uint32_t offset = 0;
+            memcpy(&project->version, &ptr[offset], sizeof(Version));
+            offset += sizeof(Version);
+            memcpy(&project->uuid, &ptr[offset], sizeof(project->uuid));
+            offset += sizeof(project->uuid);
+            memcpy(&project->title, &ptr[offset], sizeof(project->title));
+            offset += sizeof(project->title);
+            memcpy(&project->description, &ptr[offset], sizeof(project->description));
+            offset += sizeof(project->description);
             uint32_t tasksSize = 0;
-            memcpy(&tasksSize, &ptr[gap], sizeof(tasksSize));
-            gap += sizeof(tasksSize);
+            memcpy(&tasksSize, &ptr[offset], sizeof(tasksSize));
+            offset += sizeof(tasksSize);
             project->buffer_task_uuid = std::vector<char[36]>(tasksSize);
             for (int i = 0; i < tasksSize; i++) {
-                memcpy(&project->buffer_task_uuid[i], &ptr[gap], sizeof(project->uuid));
-                gap += sizeof(project->uuid);
+                memcpy(&project->buffer_task_uuid[i], &ptr[offset], sizeof(project->uuid));
+                offset += sizeof(project->uuid);
             }
             if (ds_caller != nullptr) ds_caller(*project);
             return project;
@@ -92,26 +92,26 @@ namespace  vertelien2 {
         uint32_t ProjectSerialization::ToBinary_Whole(const Project &project, char *&ptr) {
             uint32_t size = GetSize_Whole(project);
 
-            uint32_t gap = 0;
+            uint32_t offset = 0;
             ptr = (char*)malloc(size);
-            memcpy(&ptr[gap], &project.version, sizeof(Version));
-            gap += sizeof(project.version);
-            memcpy(&ptr[gap], &project.uuid, sizeof(project.uuid));
-            gap += sizeof(project.uuid);
-            memcpy(&ptr[gap], &project.title, sizeof(project.title));
-            gap += sizeof(project.title);
-            memcpy(&ptr[gap], &project.description, sizeof(project.description));
-            gap += sizeof(project.description);
+            memcpy(&ptr[offset], &project.version, sizeof(Version));
+            offset += sizeof(project.version);
+            memcpy(&ptr[offset], &project.uuid, sizeof(project.uuid));
+            offset += sizeof(project.uuid);
+            memcpy(&ptr[offset], &project.title, sizeof(project.title));
+            offset += sizeof(project.title);
+            memcpy(&ptr[offset], &project.description, sizeof(project.description));
+            offset += sizeof(project.description);
             uint32_t jobsSize = project.tasks.size();
-            memcpy(&ptr[gap], &jobsSize, sizeof(uint32_t));
-            gap += sizeof(uint32_t);
+            memcpy(&ptr[offset], &jobsSize, sizeof(uint32_t));
+            offset += sizeof(uint32_t);
             for (int i = 0; i < jobsSize; i++) {
-                memcpy(&ptr[gap], &project.tasks.at(i).get()->uuid, sizeof(project.uuid));
-                gap += sizeof(project.uuid);
+                TaskSerialization::ToBinary_Whole(*project.tasks.at(i).get(), ptr, offset);
+                memcpy(&ptr[offset], &project.tasks.at(i).get()->uuid, sizeof(project.uuid));
+                offset += sizeof(project.uuid);
             }
             if (s_caller != nullptr) s_caller(ptr);
             return size;
-            return 0;
         }
         Project * ProjectSerialization::ToData_Whole(uint32_t size, const char *ptr) {
             return nullptr;

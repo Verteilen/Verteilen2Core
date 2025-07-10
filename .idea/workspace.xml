@@ -37,7 +37,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b6eac506-808c-449e-9305-1d13d4dbad03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/data/job.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/data/job.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/data/task.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/data/task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/job.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/job.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/project.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/project.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/task.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/environment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/serialization/job.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/serialization/job.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/serialization/project.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/serialization/project.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/serialization/task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/serialization/task.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,11 +207,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -235,7 +238,8 @@
       <workItem from="1751954554410" duration="2000" />
       <workItem from="1751954600797" duration="42000" />
       <workItem from="1751954841881" duration="56000" />
-      <workItem from="1751955045225" duration="98000" />
+      <workItem from="1751955045225" duration="148000" />
+      <workItem from="1752040268521" duration="2155000" />
     </task>
     <servers />
   </component>

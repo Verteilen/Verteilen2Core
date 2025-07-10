@@ -45,8 +45,8 @@ namespace vertelien2 {
             static Task* ToData(uint32_t size, const char* ptr);
             static uint32_t GetSize(const Task& task);
 
-            static uint32_t ToBinary_Whole(const Task &task, char *&ptr);
-            static Task* ToData_Whole(uint32_t size, const char *ptr);
+            static uint32_t ToBinary_Whole(const Task &task, char*& ptr, uint32_t& offset);
+            static Task* ToData_Whole(uint32_t size, const char* ptr, uint32_t& offset);
             static uint32_t GetSize_Whole(const Task &task);
         };
     }
